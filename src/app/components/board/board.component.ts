@@ -34,4 +34,10 @@ export class BoardComponent implements OnInit {
     //console.log("nom:", nom);
     console.log(this.articles[nom])
   }
+
+  protected readonly onclick = onclick;
+
+  onClick($event: string) {
+    console.log("eventEmmiter:",$event)
+  }
 }
