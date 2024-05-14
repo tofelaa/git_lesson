@@ -1,6 +1,6 @@
 
 <!--<h2 *ngIf="articleViewer && articleViewer.title && articleViewer?.title?.length && articleViewer?.title?.length!==undefined">Interesting fact about {{articleViewer.title}}:</h2>-->
 <h2 *ngIf="articleViewer!==undefined">Interesting fact about {{articleViewer.title | uppercase}}:</h2>
-<h3 [ngClass]="articleViewer.title === 'BMW'?'red':'green'" >{{articleViewer.text}}</h3>
+<h3 [ngClass]="articleViewer.title === 'BMW'?'red':'green'" (click)="onClick()">{{articleViewer.text}}</h3>
 
 
