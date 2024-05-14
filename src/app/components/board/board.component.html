@@ -1,0 +1,11 @@
+<h1>Our articles !</h1>
+
+
+<button *ngFor="let item of articles" (click)="goToArticle(item.id)">
+  {{item.title}}
+</button>
+
+
+
+<app-article-viewer [articleViewer]="article"></app-article-viewer>
+
