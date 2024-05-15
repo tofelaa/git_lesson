@@ -3,6 +3,8 @@ import {HeaderComponent} from "../../shared/header/header.component";
 import {FooterComponent} from "../../shared/footer/footer.component";
 import {ArticleInterface} from "../../models/article.interface";
 import {NgClass, NgIf, UpperCasePipe} from "@angular/common";
+import {ReversPipe} from "../../shared/revers/revers.pipe";
+import {BoldDirective} from "../../shared/bold/bold.directive";
 
 @Component({
   selector: 'app-article-viewer',
@@ -12,7 +14,9 @@ import {NgClass, NgIf, UpperCasePipe} from "@angular/common";
     FooterComponent,
     NgIf,
     UpperCasePipe,
-    NgClass
+    NgClass,
+    ReversPipe,
+    BoldDirective
   ],
   templateUrl: './article-viewer.component.html',
   styleUrl: './article-viewer.component.css'

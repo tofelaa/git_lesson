@@ -1,6 +1,10 @@
 
 <!--<h2 *ngIf="articleViewer && articleViewer.title && articleViewer?.title?.length && articleViewer?.title?.length!==undefined">Interesting fact about {{articleViewer.title}}:</h2>-->
-<h2 *ngIf="articleViewer!==undefined">Interesting fact about {{articleViewer.title | uppercase}}:</h2>
+<h2 *ngIf="articleViewer!==undefined &&  articleViewer?.title?.length ">Interesting fact about {{articleViewer.title | uppercase}}:</h2>
 <h3 [ngClass]="articleViewer.title === 'BMW'?'red':'green'" (click)="onClick()">{{articleViewer.text}}</h3>
+<h3 *ngIf="articleViewer!==undefined &&  articleViewer?.text?.length"> Reversed by pipe text: {{articleViewer.text | revers}}</h3>
+<p appBold *ngIf="articleViewer!==undefined &&  articleViewer?.text?.length" > Bold by directive text: {{articleViewer.text}}</p>
+<p *ngIf="articleViewer!==undefined &&  articleViewer?.text?.length"> NOT Bold by directive text: {{articleViewer.text}}</p>
+
 
 
