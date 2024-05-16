@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ArticleInterface} from "../../models/article.interface";
 import {ArticleViewerComponent} from "../article-viewer/article-viewer.component";
 import {NgForOf} from "@angular/common";
+import {ArticlesService} from "../../services/articles.service";
 
 @Component({
   selector: 'app-board',
@@ -16,28 +17,31 @@ import {NgForOf} from "@angular/common";
 export class BoardComponent implements OnInit {
 
   public article : ArticleInterface = {id:0, title: "" ,text: ""}
-  public articles: ArticleInterface[]=[];
+ // public articles: ArticleInterface[]=[];
+
+  constructor(public articlesService: ArticlesService) {
+  }
 
   ngOnInit() {
-    this.articles =
-       [{id: 0, title: "Subaru", text:"Subaru is the best auto in the world"},
-        {id: 1, title: "BMW", text:"BMW is the worse auto in the world"},
-        {id: 2, title: "Bentley", text:"Bentley is the most expensive auto in the world"}
-      ]
-
+    // this.articles =
+    //    [{id: 0, title: "Subaru", text:"Subaru is the best auto in the world"},
+    //     {id: 1, title: "BMW", text:"BMW is the worse auto in the world"},
+    //     {id: 2, title: "Bentley", text:"Bentley is the most expensive auto in the world"}
+    //   ]
   }
 
-
-  goToArticle(nom:any) {
-
-    this.article = this.articles[nom];
-    //console.log("nom:", nom);
-    console.log(this.articles[nom])
-  }
+  // goToArticle(nom:any) {
+  //
+  //   this.article = this.articlesService.articles[nom];
+  //   //console.log("nom:", nom);
+  //   console.log(this.articlesService.articles[nom])
+  // }
 
   protected readonly onclick = onclick;
 
   onClick($event: string) {
     console.log("eventEmmiter:",$event)
   }
+
+  protected readonly ArticlesService = ArticlesService;
 }
