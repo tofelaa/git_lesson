@@ -1,11 +1,12 @@
 <h1>Push the button for MAGIC ! !</h1>
 
 
-<button *ngFor="let item of articles" (click)="goToArticle(item.id)">
+<button *ngFor="let item of articlesService.articles" (click)="articlesService.setArticle(item.id || 0)">
   {{item.title}}
 </button>
 
 
 
-<app-article-viewer [articleViewer]="article" (articleChange)="onClick($event)"></app-article-viewer>
+<app-article-viewer [articleViewer]="articlesService.article" (articleChange)="onClick($event)"></app-article-viewer>
+
 
