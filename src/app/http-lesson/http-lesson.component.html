@@ -1,0 +1,7 @@
+<p>http-lesson works!</p>
+
+<div *ngIf="$todoItem |async as item">
+  <p>{{item.title}}</p>
+
+</div>
+<button (click)="logItems()"> LOG</button>
